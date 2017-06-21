@@ -1,8 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import { render } from 'enzyme';
+import { Provider } from 'react-redux';
+import store from './store';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  render(
+  	<Provider store={store}>
+  		<App />
+  	</Provider>	
+  );
 });
